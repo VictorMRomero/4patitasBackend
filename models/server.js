@@ -1,20 +1,32 @@
 const express = require('express');
+const cors = require('cors');
 
 class Server {
 
     constructor(){
         this.app = express();
         this.port = process.env.PORT;
+        this.usuariosPath = 'api/usuarios'
+
+        // Middlewares
+        this.middlewares();
+
+        //Rutas de la aplicación
         this.routes()
     }
 
+    middlewares(){
+        //CORS
+        this.app.use(cors());
+
+
+        this.app.use(express.static('public'))
+    }
+
     routes(){
-        this.app.get('/', (req, res) => {
-            res.send('Hello word')
-        });
-        this.app.get('*', (req, res) => {
-            res.send('404')
-        });
+
+        this.app.use('/api/usuarios', require('../routes/usuarios'))
+
     }
 
     listen(){
