@@ -11,6 +11,9 @@ class Server {
         // Middlewares
         this.middlewares();
 
+        //Lectura y parseo del codigo
+        this.app.use(express.json());
+
         //Rutas de la aplicación
         this.routes()
     }
