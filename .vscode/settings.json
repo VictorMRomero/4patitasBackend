@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/e895d34c-b7a8-4ef0-9d8d-affee178d52c/resourceGroups/backend4patitas/providers/Microsoft.Web/sites/backend4patitas",
+    "appService.deploySubpath": "."
+}
